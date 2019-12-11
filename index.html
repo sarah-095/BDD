@@ -92,7 +92,7 @@
             
             function agregarItemSQL(tx){
 
-                var titulo = $(#titulo).val();
+                var titulo = document.getElementById("titulo").value;
                 var autor = $(#autor).val();
 
                 tx.executeSql("INSERT INTO libros (titulo, autor) VALUES ('"+titulo+"','"+autor+"')", [] , leerBD, errorBD);
@@ -117,14 +117,14 @@
     <body >
         
         <p>Escribe el titulo</p>
-        <input type="text" id="titulo" placeholder="Titulo" autocomplete="off" name="titulo" required> </div>
+        <input id="titulo" style="margin:10px" type="text" autocomplete="off" name="titulo" required><br><br>
+        
 
         <p>Escribe el autor</p>
-        <input type="text" id="autor" placeholder="Autor" autocomplete="off" name="autor" required> </div>
+        <input type="text" id="autor" placeholder="Autor" autocomplete="off" name="autor" required>
         
-        <button onclick="leerBaseDeDatos()"> leer Base de datos </button>
         <button onclick="agregarItem()"> Insertar nuevo libro</button><br>
-
+        <button onclick="leerBaseDeDatos()"> leer Base de datos </button>
         <button onclick=" borarUltimo()"> Borrar libros de Oscar Wilde</button>
         
         <h1> Libros </h1>
